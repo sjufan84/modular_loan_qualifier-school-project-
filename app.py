@@ -10,6 +10,7 @@ import sys
 import fire
 import questionary
 from pathlib import Path
+import csv 
 
 from qualifier.utils.fileio import load_csv
 
@@ -39,6 +40,8 @@ def load_bank_data():
     return load_csv(csvpath)
 
 
+
+                           
 def get_applicant_info():
     """Prompt dialog to get the applicant's financial information.
 
@@ -108,8 +111,17 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    csvpath = Path('./data/filtered_loan_data.csv')
+    header = ['Lender','Max Loan Amount','Max LTV','Max DTI','Min Credit Score','Interest Rate']
+    with open(csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=' ')
+
+        #Write the header row first before the raw data
+        csvwriter.writerow(header)
+
+        #Fill in the raw data into the csv to be exported
+        for row in qualifying_loans:
+            csvwriter.writerow(row)
 
 
 def run():
