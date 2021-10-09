@@ -1,18 +1,22 @@
-# Project Title
-
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+# Modular Loan Filtering Application
+The goal of this project is to implement a loan filtering program that will allow users to filter loan availability based on credit, monthly debt and income, and other parameters.  It will filter through a list of lenders based on their criteria and then export a list of qualifying loans to a *.csv file.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+In this project we will be utilizing python 3 and the following dependencies --  
+[Questionary](https://github.com/tmbo/questionary) -- Streamlines gathering input via a cli interface allowing for user input in a variety of forms  
+[Python Fire](https://github.com/google/python-fire) -- Generates a cli interface for enhanced interactivity with the app
 
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+The dependencies listed above can be installed using the following command prompts in the terminal:  
+
+Python Fire -- `pip install fire`  
+Questionary -- `pip install questionary`  
 
 ---
 
