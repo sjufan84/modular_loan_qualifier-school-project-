@@ -1,0 +1,50 @@
+  109  ls
+  110  ls
+  111  cd Live-Lesson-Activities/
+  112  ls
+  113  cd 03-Financial-Analysis-Pandas/
+  114  jupyter lab
+  115  pwd
+  116  cd ..
+  117  cd ..
+  118  cd ..
+  119  cd ..
+  120  ls
+  121  cd Missing\ Money/
+  122  ls
+  123  cd 01_Missing_Money/
+  124  jupyter lab
+  125  cd ..
+  126  cd ..
+  127  ls
+  128  cd Dollars\ and\ Change/
+  129  cd ..
+  130  pwd
+  131  ls
+  132  jupyter lab
+  133  C:/Users/sjufa/Anaconda3/Scripts/activate
+  134  conda activate base
+  135  conda activate dev
+  136  pwd
+  137  git status
+  138  git commit -m 'Created a generic save_csv function to be imported into main app.py'
+  139  git push
+  140  git status
+  141  git add app.py
+  142  git status
+  143  python app.py 
+  144  git commit -m 'Updated main app with a function to allow the user to export qualifying loans to a *.csv file'
+  145  git push
+  146  git status
+  147  git status
+  148  git add cli_screen_shot.png
+  149  git status
+  150  git commit -m 'Uploaded cli screen shot as an example of app functionality'
+  151  git push
+  152  python app.py 
+  153  git status
+  154  git add README.md
+  155  git status
+  156  git commit -m 'Updated README.md with more detailed usage instructions and license information'
+  157  git push
+  158  history 50 > terminal_history.txt
