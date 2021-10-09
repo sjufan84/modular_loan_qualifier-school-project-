@@ -28,3 +28,19 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+''' Defining a general save_csv function that can be imported into other modules. 
+Takes in 2 args, csvpath and data.  This will allow the user to pass filtered loan data 
+and export to a *.csv file if desired.'''
+
+def save_csv(csvpath, data, header=None):
+    with open(csvpath, 'w', newline="") as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=",")
+        # Checks if a header is defined by the user before adding in raw data
+        if header:
+            csvwriter.writerow(header)
+        # Iterates through the data by row and adds to the file to be exported.
+        for row in data:
+            csvwriter.writerow(row)
+
+    
