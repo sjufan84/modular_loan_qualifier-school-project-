@@ -1,5 +1,5 @@
 # Modular Loan Filtering Application
-The goal of this project is to implement a loan filtering program that will allow users to filter loan availability based on credit, monthly debt and income, and other parameters.  It will filter through a list of lenders based on their criteria and then export a list of qualifying loans to a *.csv file.
+The goal of this project is to implement a loan filtering program that will allow users to filter loan availability based on credit, monthly debt and income, and other parameters.  It will filter through a list of lenders from `daily_rate_sheet.csv` or a user specified file path and based on their criteria export a list of qualifying loans to a *.csv file.
 
 ---
 
@@ -22,16 +22,14 @@ Questionary -- `pip install questionary`
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+In order to run the main application, from the terminal within the modular_loan_qualifier folder input `python app.py`.  Once ran you will be prompted to provide a file path for your bank loan criteria.  You may use the provided [daily_rate_sheet_csv](data/daily_rate_sheet.csv) as an example or import a file of your choosing.  You will then be prompted to enter qualifying criteria to filter qualifying loans as indicated by the screen shot below --  
 
----
-
-## Contributors
-
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+![Sample CLI prompts:](cli_screen_shot.png)  
+  
+If there are no qualifying loans, the system will exit.  It there are qualifying loans, you will have the option to save and export them to a user specified file path that is inputted via the CLI.
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+Licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt)  Copyright 2021 Dave Thomas.
