@@ -12,7 +12,7 @@ import questionary
 from pathlib import Path
 import csv 
 
-from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import load_csv, save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -104,25 +104,26 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     return bank_data_filtered
 
-
 def save_qualifying_loans(qualifying_loans):
-    """Saves the qualifying loans to a CSV file.
-
+    """Saves the qualifying loans to a CSV file.  Utilizes imported generic save_csv function.
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    csvpath = Path('./data/filtered_loan_data.csv')
-    header = ['Lender','Max Loan Amount','Max LTV','Max DTI','Min Credit Score','Interest Rate']
-    with open(csvpath, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter=' ')
+    # If not qualifying loans, exit the system
+    if not qualifying_loans:
+        sys.exit("Sorry, there are no qualifying loans!")
 
-        #Write the header row first before the raw data
-        csvwriter.writerow(header)
+    # If qualifying loans, asks the user if they would like to save the results
+    saveFile = questionary.confirm("Would you like to save the qualifying loans?").ask()
 
-        #Fill in the raw data into the csv to be exported
-        for row in qualifying_loans:
-            csvwriter.writerow(row)
-
+    # If user would like to save loan results, prompts for a path to export those results.
+    if saveFile:
+        csvpath = questionary.text(
+            "Please enter a filepath for the saved data: (qualifying_loans.csv)"
+        ).ask()
+        # Specify the header that should be written before the raw loan data
+        header = ['Lender','Max Loan Amount','Max LTV','Max DTI','Min Credit Score','Interest Rate']
+        save_csv(Path(csvpath), qualifying_loans)
 
 def run():
     """The main function for running the script."""
